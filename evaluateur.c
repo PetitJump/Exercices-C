@@ -3,14 +3,14 @@
 void demander_prenom(){
     char prenom[50];
     printf("Quel est ton prénom : ");
-    scanf("%s", &prenom);
+    scanf("%s", prenom);
     printf("Bonjour %s \n", prenom);
 }
 
 int main(){
     int note;
     demander_prenom();
-    printf("Veuillez donner votre note : ");
+    printf("Veuillez donner votre dernière note : ");
     scanf("%d", &note);
     if (note <= 9) {
         printf("Note insuffisant \n");
@@ -29,4 +29,3 @@ int main(){
     }
     return 0;
 }
-
