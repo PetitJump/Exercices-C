@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 char* demander_prenom(){
     static char prenom[50];
@@ -10,8 +11,11 @@ char* demander_prenom(){
 
 int main(){
     int note;
+    char rep[4] = "oui";
     char* prenom = demander_prenom();
-    printf("%s veuillez donner votre dernière note : ", prenom);
+    while (strcmp(rep, "oui") == 0)
+    {
+        printf("%s veuillez donner votre dernière note : ", prenom);
     scanf("%d", &note);
     if (note <= 9) {
         printf("Note insuffisant \n");
@@ -28,5 +32,9 @@ int main(){
     else {
         printf("Erreur \n");
     }
+    printf("Voulez vous continuer oui/non ? ");
+    scanf("%s", rep);
+    }
+    
     return 0;
 }
